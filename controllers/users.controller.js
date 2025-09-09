@@ -4,6 +4,15 @@ import { User } from "../models/users.model.js";
 import bcrypt from "bcryptjs";
 
 
+
+export const healthCheck = (request,response)=>{
+    response.json({
+        status:"ok",
+        message:"server is up and running"
+    })
+}
+
+
 export const signup = async (request,response)=> {
     const {name,email,phone,password} = request.body;
     try{
